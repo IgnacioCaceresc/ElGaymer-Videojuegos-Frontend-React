@@ -3,7 +3,7 @@ const ProductCard = ({ producto, cantidadEnCarrito, agregarAlCarrito, restarCant
     <div className="col-md-6 col-lg-4 mb-4">
       <div className="card h-100 shadow-sm producto-card">
         <img 
-          src={`/assets/img/${producto.imagen}`} 
+          src={`${import.meta.env.BASE_URL}assets/img/${producto.imagen}`} 
           alt={producto.nombre} 
           className="card-img-top" 
           style={{ height: '200px', objectFit: 'contain', padding: '10px' }} 

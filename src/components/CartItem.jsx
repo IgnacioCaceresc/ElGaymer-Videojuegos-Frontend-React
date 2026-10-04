@@ -3,7 +3,7 @@ const CartItem = ({ item, eliminarDelCarrito, agregarAlCarrito, restarCantidad }
     <li className="list-group-item d-flex justify-content-between align-items-center mb-2 shadow-sm rounded">
       <div className="d-flex align-items-center flex-grow-1">
         <img 
-          src={`/assets/img/${item.imagen}`} 
+          src={`${import.meta.env.BASE_URL}assets/img/${item.imagen}`} 
           alt={item.nombre} 
           className="rounded me-3" 
           style={{ width: '50px', height: '50px', objectFit: 'cover' }} 

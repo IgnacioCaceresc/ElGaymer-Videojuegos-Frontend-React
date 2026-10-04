@@ -28,7 +28,7 @@ function App() {
         // Simulando una pequeña demora para que se note el estado de carga
         await new Promise(resolve => setTimeout(resolve, 800));
 
-        const response = await fetch('/data/productos.json');
+        const response = await fetch(import.meta.env.BASE_URL + 'data/productos.json');
         if (!response.ok) {
           throw new Error('Error al cargar los productos');
         }
