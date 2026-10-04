@@ -1,3 +1,5 @@
+import DivisasWidget from './DivisasWidget';
+
 const Navbar = ({ totalItems, onToggleCart, setFiltroCategoria, setTerminoBusqueda }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
@@ -46,6 +48,8 @@ const Navbar = ({ totalItems, onToggleCart, setFiltroCategoria, setTerminoBusque
             />
             <button className="btn btn-outline-primary" type="submit"><i className="bi bi-search"></i></button>
           </form>
+
+          <DivisasWidget />
 
           {/* Botón Carrito */}
           <button className="btn btn-primary position-relative" type="button" onClick={onToggleCart}>
