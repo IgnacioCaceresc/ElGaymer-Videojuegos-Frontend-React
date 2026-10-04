@@ -1,4 +1,58 @@
 /* Variables */
+@font-face {
+    font-family: 'RobotoBlack';
+    src: url('../fuentes/Roboto-Black.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Akira';
+    src: url('../fuentes/Akira Expanded Demo.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bremlin';
+    src: url('../fuentes/Bremlin.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Ethnocentric';
+    src: url('../fuentes/Ethnocentric.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RobotoThin';
+    src: url('../fuentes/Roboto-Thin.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Vogue';
+    src: url('../fuentes/Vogue-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'YellowBanana';
+    src: url('../fuentes/Yellow Banana.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#inicio h1,
+#inicio p.lead {
+    font-family: 'Ethnocentric', sans-serif;
+}
+
 :root {
     --color-primary: #00d2d3;
     --color-secondary: #222f3e;
@@ -110,6 +164,16 @@ body {
     font-weight: bold;
     color: var(--color-secondary);
     margin: 15px 0;
+}
+
+
+/* Estilos para el carrito en versión móvil */
+
+.offcanvas-bottom {
+    height: 75vh !important;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .btn-buy {
