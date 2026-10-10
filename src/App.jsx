@@ -8,7 +8,15 @@ function App() {
   // ESTADOS PRINCIPALES DE LA APLICACIÓN
   // ==========================================
   const [productos, setProductos] = useState([]);
-  const [carrito, setCarrito] = useState([]);
+  const [carrito, setCarrito] = useState(() => {
+    try {
+      const item = window.localStorage.getItem('elgaymer_carrito');
+      return item ? JSON.parse(item) : [];
+    } catch (error) {
+      console.warn("Error al leer el carrito de localStorage:", error);
+      return []; // Fallback seguro en caso de datos corruptos
+    }
+  });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -44,6 +52,15 @@ function App() {
 
     cargarProductos();
   }, []); // Dependencias vacías: solo se ejecuta al montar el componente
+
+  // Efecto para sincronizar el carrito con localStorage cada vez que cambia
+  useEffect(() => {
+    try {
+      window.localStorage.setItem('elgaymer_carrito', JSON.stringify(carrito));
+    } catch (error) {
+      console.warn("Error al guardar el carrito en localStorage:", error);
+    }
+  }, [carrito]); // Se ejecuta única y exclusivamente cuando 'carrito' muta
 
   // Funciones para manejar el carrito
   const agregarAlCarrito = (producto, abrirCarrito = true) => {
